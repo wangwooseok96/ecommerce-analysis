@@ -12,6 +12,17 @@ The dataset is synthetically generated to simulate real-world e-commerce transac
 - Product Category
 - Purchase Date
 
+## Visualizations
+
+### Revenue by Category
+![Revenue](revenue_bar.png)
+
+### Daily Revenue Trend
+![Trend](daily_trend.png)
+
+### Purchase Distribution
+![Boxplot](boxplot.png)
+
 ## Key Analysis
 
 ### 1. Revenue Analysis
