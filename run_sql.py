@@ -4,13 +4,21 @@ import pandas as pd
 # Connect to SQLite database
 conn = sqlite3.connect("ecommerce.db")
 
-# Read SQL query from file
+# Read SQL queries from file
 with open("analysis.sql", "r", encoding="utf-8") as file:
-    query = file.read()
+    sql_script = file.read()
 
-# Run query
-result = pd.read_sql_query(query, conn)
+# Split multiple SQL statements
+queries = [
+    query.strip()
+    for query in sql_script.split(";")
+    if query.strip()
+]
 
-print(result)
+# Run each query
+for i, query in enumerate(queries, start=1):
+    print(f"\n--- Query {i} ---")
+    result = pd.read_sql_query(query, conn)
+    print(result)
 
 conn.close()
