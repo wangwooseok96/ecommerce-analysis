@@ -66,3 +66,37 @@ Transactions with missing `CustomerID` were retained for aggregate sales analysi
 - SQL
 - SQLite
 - Git / GitHub
+
+## How to Run
+
+1. Download the UCI Online Retail dataset and place `Online Retail.xlsx` in the project folder.
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Clean the raw data:
+
+```bash
+python data_cleaning.py
+```
+
+4. Run the Python analysis and generate visualizations:
+
+```bash
+python sales_analysis.py
+```
+
+5. Create the SQLite database:
+
+```bash
+python load_to_sqlite.py
+```
+
+6. Run the SQL analysis:
+
+```bash
+python run_sql.py
+```
