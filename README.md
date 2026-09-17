@@ -58,12 +58,11 @@ Transactions with missing `CustomerID` were retained for aggregate sales analysi
   - Distinct order counts
   - Average order value (AOV)
   - Monthly revenue trends
- 
- ## Tools Used
+
+## Tools Used
 - Python
 - Pandas
 - Matplotlib
 - SQL
 - SQLite
 - Git / GitHub
-
