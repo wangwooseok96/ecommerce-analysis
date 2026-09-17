@@ -7,7 +7,7 @@ The analysis uses Python for data cleaning and visualization, and SQL for busine
 
 ## Dataset
 - Source: UCI Machine Learning Repository — Online Retail Dataset
-- Records: 541,909 transactions
+- Records: 541,909 transaction line items
 - Key fields:
   - InvoiceNo
   - StockCode
