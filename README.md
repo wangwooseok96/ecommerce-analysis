@@ -1,53 +1,71 @@
-# E-commerce Purchase Behavior Analysis
+# E-commerce Sales Analysis
 
 ## Overview
-This project analyzes simulated e-commerce transaction data to explore customer behavior, revenue distribution, and key drivers of purchase amount.
+This project analyzes real-world online retail transaction data to explore sales trends, country-level revenue, order volume, and average order value (AOV).
+
+The analysis uses Python for data cleaning and visualization, and SQL for business-oriented aggregation and reporting.
 
 ## Dataset
-The dataset is synthetically generated to simulate real-world e-commerce transactions, including:
+- Source: UCI Machine Learning Repository — Online Retail Dataset
+- Records: 541,909 transactions
+- Key fields:
+  - InvoiceNo
+  - StockCode
+  - Description
+  - Quantity
+  - InvoiceDate
+  - UnitPrice
+  - CustomerID
+  - Country
 
-- User ID
-- Order ID
-- Purchase Amount
-- Product Category
-- Purchase Date
+## Data Cleaning
+For sales analysis, the data was filtered to:
+- Keep only records with `Quantity > 0`
+- Keep only records with `UnitPrice > 0`
+- Exclude cancelled invoices beginning with `C`
+- Exclude rows with missing product descriptions
+
+A `Revenue` field was created as:
+
+`Revenue = Quantity × UnitPrice`
+
+Transactions with missing `CustomerID` were retained for aggregate sales analysis and excluded only when customer-level analysis requires an identifier.
 
 ## Visualizations
 
-### Revenue by Category
-![Revenue](revenue_bar.png)
+### Monthly Revenue Trend
+![Monthly Revenue Trend](monthly_revenue.png)
 
-### Daily Revenue Trend
-![Trend](daily_trend.png)
-
-### Purchase Distribution
-![Boxplot](boxplot.png)
+### Top 10 Countries by Revenue
+![Top Countries by Revenue](top_countries_revenue.png)
 
 ## Key Analysis
 
-### 1. Revenue Analysis
-- Compared total revenue across product categories
-- Identified top-performing category
+### 1. Monthly Revenue
+- Calculated monthly revenue from cleaned transaction data
+- Revenue increased sharply from September through November 2011
+- November 2011 generated the highest monthly revenue in the dataset
+- December 2011 is a partial month and should not be directly compared with full months
 
-### 2. Time Series Analysis
-- Analyzed daily revenue trends
-- Identified peak revenue day
+### 2. Country-Level Sales
+- Ranked countries by total revenue and order volume
+- The United Kingdom generated the largest share of revenue, driven primarily by a much higher number of orders
+- The Netherlands and Australia had relatively high average order values despite much lower order volumes
 
-### 3. Customer Analysis
-- Calculated total spending per user
-- Identified top customers
-- Computed top 10 users’ revenue contribution
-
-### 4. Customer Segmentation
-- Segmented users into:
-  - High Value
-  - Medium Value
-  - Low Value
-
-### 5. Statistical Modeling
-- Built a linear regression model:
-  
-  purchase_amount ~ category + month + day
+### 3. SQL Analysis
+- Used SQL to calculate:
+  - Total revenue by country
+  - Distinct order counts
+  - Average order value (AOV)
+  - Monthly revenue trends
+ 
+ ## Tools Used
+- Python
+- Pandas
+- Matplotlib
+- SQL
+- SQLite
+- Git / GitHub
 
 ### Key Findings
 
