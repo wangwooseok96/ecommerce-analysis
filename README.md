@@ -29,7 +29,7 @@ A `Revenue` field was created as:
 
 `Revenue = Quantity × UnitPrice`
 
-Transactions with missing `CustomerID` were retained for aggregate sales analysis and excluded only when customer-level analysis requires an identifier.
+Transactions with missing CustomerID were retained because this project focuses on aggregate sales analysis rather than customer-level analysis.
 
 ## Visualizations
 
