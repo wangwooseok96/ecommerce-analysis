@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Load cleaned data
 df = pd.read_csv("online_retail_clean.csv", dtype={"InvoiceNo": str})
@@ -16,8 +17,6 @@ monthly_revenue = (
 )
 
 print(monthly_revenue)
-
-import matplotlib.pyplot as plt
 
 monthly_revenue["Month"] = monthly_revenue["Month"].astype(str)
 
